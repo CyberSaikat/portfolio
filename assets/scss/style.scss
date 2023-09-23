@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,600;1,600&display=swap&family=Style+Script&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
 // Variables
 $playfair: "Playfair Display", serif;
 $crimson: "Crimson Text", serif;
 $style_script: "Style Script", cursive;
 $logo_width: 40%;
+$blur_circle: 300px;
+$primary: #fecd08;
+$secondary: navy;
+
 *,
 *::after,
 *::before {
@@ -19,6 +24,16 @@ a {
     color: #000;
 }
 
+video {
+    position: fixed;
+    top: 100px;
+    left: 0;
+}
+
+.text-primary {
+    color: $primary;
+}
+
 header {
     width: 100%;
     max-width: 1920px;
@@ -28,10 +43,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
+    .controller {
+        display: none;
+    }
     .logo {
         width: $logo_width;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         gap: 10px;
         img {
@@ -57,7 +76,7 @@ header {
                 transition: 0.3s linear all;
                 margin-top: 5px;
             }
-            &:hover::after {
+            &:hover::after,&:hover::before {
                 width: 100%;
             }
         }
@@ -67,16 +86,31 @@ header {
         display: flex;
         justify-content: space-around;
         list-style: none;
+        transition: 0.3s linear all;
+        z-index: 10;
         li {
             margin: 10px;
             padding: 10px 20px;
             &:hover {
-                a{
-                    &::after {
-                        width: 100%;
+                a {
+                    span {
+                        &:nth-child(1) {
+                            width: 100%;
+                        }
+                        
+                        &:nth-child(2) {
+                            height: 100%;
+                        }
+                        
+                        &:nth-child(3) {
+                            width: 100%;
+                        }
+                        
+                        &:nth-child(4) {
+                            height: 100%;
+                        }
                     }
                 }
-                    
             }
             a {
                 text-decoration: none;
@@ -85,18 +119,254 @@ header {
                 font-size: 18px;
                 font-family: $playfair;
                 letter-spacing: 2px;
-                &::after {
-                    content: "";
+                padding: 10px 30px;
+                span {
+                    background: $primary;
                     position: absolute;
-                    top: 85%;
-                    left: 0;
-                    width: 0;
-                    height: 2px;
-                    background: #e21818;
-                    transition: 0.3s linear all;
-                    margin-top: 5px;
+                    transition: 0.5s ease-in-out all;
+                    &:nth-child(1){
+                        width: 0;
+                        height: 2px;
+                        top: 0;
+                        left: 0;
+                    }
+                    &:nth-child(2){
+                        width: 2px;
+                        height: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+                    &:nth-child(3){
+                        width: 0;
+                        height: 2px;
+                        bottom: 0;
+                        right: 0;
+                    }
+                    &:nth-child(4){
+                        width: 2px;
+                        height: 0;
+                        left: 0;
+                        top: 0;
+                    }
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1020px) {
+    header {
+        .logo {
+            width: 100%;
+            img {
+                width: 80px;
+            }
+            h4 {
+                font-size: 24px;
+            }
+        }
+        .controller {
+            display: inline-block;
+            font-size: 42px;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            margin-right: 20px;
+            i {
+                transition: 0.5s ease all;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            i.bi-x {
+                font-size: 0px;
+            }
+            &.active {
+                animation: rotate 1s ease;
+                i.bi-list {
+                    font-size: 0px;
+                }
+                i.bi-x {
+                    font-size: 42px;
+                }
+            }
+        }
+        ul.menu {
+            display: flex;
+            width: 100%;
+            height: 0;
+            position: absolute;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            top: 100px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            transition: 0.2s ease-in-out all;
+            overflow: hidden;
+            li {
+                margin-top: 30px;
+                a {
+                    color: $primary;
+                    font-size: 24px;
+                    font-weight: bolder;
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        background: $secondary;
+                        z-index: -1;
+                        transition: 0.3s ease-in-out all;
+                    }
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &.active {
+                height: calc(100vh - 100px);
+            }
+        }
+    }
+}
+
+main {
+    width: 100%;
+    max-width: 1920px;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    section {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        .text-wrapper {
+            color: #fff;
+            font-size: 2rem;
+        }
+        .box {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+            a {
+                font-size: 1.5rem;
+                padding: 20px 30px;
+                display: inline-block;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                color: $primary;
+                transition: 0.5s ease-in-out all;
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background: $secondary;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: skew(45deg);
+                    margin-left: -50%;
+                    z-index: -1;
+                    transition: 0.5s ease-in-out all;
+                }
+                &:hover{
+                    &::before {
+                        transform: skew(0);
+                        margin-left: 0;
+                    }
+                    span {
+                        &:nth-child(1) {
+                            width: 100%;
+                        }
+                        
+                        &:nth-child(2) {
+                            height: 100%;
+                        }
+                        
+                        &:nth-child(3) {
+                            width: 100%;
+                        }
+                        
+                        &:nth-child(4) {
+                            height: 100%;
+                        }
+                    }
+                }
+                span {
+                    background: $primary;
+                    position: absolute;
+                    transition: 0.5s ease-in-out all;
+                    &:nth-child(1){
+                        width: 0;
+                        height: 2px;
+                        top: 0;
+                        left: 0;
+                    }
+                    &:nth-child(2){
+                        width: 2px;
+                        height: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+                    &:nth-child(3){
+                        width: 0;
+                        height: 2px;
+                        bottom: 0;
+                        right: 0;
+                    }
+                    &:nth-child(4){
+                        width: 2px;
+                        height: 0;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+    aside {
+        width: 20%;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 860px) {
+    main {
+        section {
+            padding: 0 20px;
+            .text-wrapper {
+                font-size: 1rem;
+            }
+            .box {
+                a {
+                    font-size: 1rem;
+                    padding: 10px 20px;
+                }
+            }
+        }
+        aside {
+            display: none;
+        }
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
     }
 }
