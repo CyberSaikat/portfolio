@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,600;1,600&display=swap&family=Style+Script&display=swap");
+
+// Variables
+$playfair: "Playfair Display", serif;
+$crimson: "Crimson Text", serif;
+$style_script: "Style Script", cursive;
+$logo_width: 40%;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+header {
+    width: 100%;
+    max-width: 1920px;
+    height: 100px;
+    padding: 0 4%;
+    background: navy;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        width: $logo_width;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        img {
+            width: 100px;
+        }
+        h4 {
+            font-size: 36px;
+            font-family: $style_script;
+            letter-spacing: 4px;
+            display: inline-block;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 85%;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #e21818;
+                transition: 0.3s linear all;
+                margin-top: 5px;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+    ul.menu {
+        width: calc(100% - $logo_width);
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        li {
+            margin: 10px;
+            padding: 10px 20px;
+            &:hover {
+                a{
+                    &::after {
+                        width: 100%;
+                    }
+                }
+                    
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+                position: relative;
+                font-size: 18px;
+                font-family: $playfair;
+                letter-spacing: 2px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 85%;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #e21818;
+                    transition: 0.3s linear all;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
