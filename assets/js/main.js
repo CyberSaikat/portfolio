@@ -3,4 +3,5 @@ $(document).ready(function(){
         $('.controller').toggleClass("active");
         $(".menu").toggleClass("active");
     });
+    $("#experience").html(new Date().getFullYear() - 2020);
 });

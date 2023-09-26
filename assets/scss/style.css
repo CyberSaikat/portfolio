@@ -7,6 +7,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.3s ease-in-out all;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -24,16 +29,27 @@ video {
   color: #fecd08;
 }
 
+.text-secondary {
+  color: navy;
+}
+
+.font-weight-bolder {
+  font-weight: bolder;
+}
+
 header {
   width: 100%;
   max-width: 1920px;
   height: 100px;
   padding: 0 4%;
-  background: navy;
+  background: rgb(0, 0, 128);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 header .controller {
   display: none;
@@ -218,7 +234,7 @@ header ul.menu li a span:nth-child(4) {
 main {
   width: 100%;
   max-width: 1920px;
-  height: calc(100vh - 100px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,6 +344,173 @@ main aside {
   }
   main aside {
     display: none;
+  }
+}
+#about {
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  padding: 120px 0 30px 0;
+  background: lightcyan;
+}
+#about h2 {
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+  color: navy;
+  font-weight: bolder;
+}
+#about h2::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 2px;
+  background: #fecd08;
+}
+#about h2:hover::after {
+  width: 100%;
+}
+#about .container {
+  padding: 0 60px;
+}
+#about .container h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: navy;
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+}
+#about .container h3::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 2px;
+  background: #fecd08;
+}
+#about .container h3:hover::after {
+  width: 100%;
+}
+#about .container p {
+  font-size: 24px;
+  font-family: "Crimson Text", serif;
+}
+#about .container ul {
+  margin-left: 40px;
+  font-size: 1.2rem;
+  list-style: none;
+}
+#about .container ul li::before {
+  content: "\f5c2";
+  font-family: "bootstrap-icons";
+  margin-right: 10px;
+}
+#about .container ul li ul.skills {
+  list-style: none;
+}
+#about .container ul li ul.skills li::before {
+  content: "";
+}
+#about .container ul li ul.skills li .text {
+  display: inline-block;
+  width: 150px;
+}
+#about .container ul li ul.skills li .line {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 6px;
+}
+#about .container ul li ul.skills li .line::before, #about .container ul li ul.skills li .line::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgb(255, 255, 255);
+  margin-left: 10px;
+  border-radius: 5px;
+}
+#about .container ul li ul.skills li .line.html::after {
+  width: 90%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.css::after {
+  width: 60%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.php::after {
+  width: 70%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.js::after {
+  width: 50%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.sql::after {
+  width: 95%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.sass::after {
+  width: 65%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.jq::after {
+  width: 65%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.bt::after {
+  width: 75%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.git::after {
+  width: 75%;
+  background: red;
+}
+#about .container ul li ul.skills li .line.c::after {
+  width: 65%;
+  background: red;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 860px) {
+  #about {
+    height: auto;
+  }
+  #about .container {
+    padding: 0 30px;
+  }
+  #about .container p {
+    font-size: 18px;
+  }
+  #about .container ul {
+    margin-left: 0;
+  }
+  #about .container ul li {
+    font-weight: bolder;
+  }
+  #about .container ul li::before {
+    margin-right: 10px;
+  }
+  #about .container ul li ul.skills li .text {
+    font-size: 16px;
+    width: 120px;
+    font-weight: normal;
+  }
+  #about .container ul li ul.skills li .line {
+    width: 150px;
   }
 }
 @keyframes rotate {
