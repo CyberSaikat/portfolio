@@ -30,11 +30,27 @@ video {
 }
 
 .text-secondary {
-  color: navy;
+  color: navy !important;
+}
+
+.bg-primary {
+  background: #fecd08;
 }
 
 .font-weight-bolder {
   font-weight: bolder;
+}
+
+.p-2 {
+  padding: 20px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.bg-secondary {
+  background: navy;
 }
 
 header {
@@ -349,7 +365,6 @@ main aside {
 #about {
   width: 100%;
   max-width: 1920px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -513,8 +528,376 @@ main aside {
     width: 150px;
   }
 }
+#projects {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  padding: 120px 0 30px 0;
+  background: lightcyan;
+}
+#projects h2 {
+  font-size: 3rem;
+  position: relative;
+  font-family: "Playfair Display", serif;
+  color: navy;
+  font-weight: bolder;
+}
+#projects h2::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 2px;
+  background: #fecd08;
+}
+#projects h2:hover::after {
+  width: 100%;
+}
+#projects #hero {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 40px;
+}
+#projects #hero img {
+  width: 50%;
+  margin: 20px;
+}
+#projects #hero .overview {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#projects #hero .overview h1 {
+  font-size: 4rem;
+  color: navy;
+  align-self: center;
+  text-align: center;
+  margin-top: 40px auto;
+  font-family: "Crimson Text", serif;
+  position: relative;
+  margin-bottom: 40px;
+}
+#projects #hero .overview h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 20px;
+  background: navy;
+}
+#projects #hero .overview h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fecd08;
+  animation: lefttoright 3s ease-in-out infinite;
+}
+#projects #hero .overview h3 {
+  font-size: 1.4rem;
+  color: navy;
+  text-decoration: underline;
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+#projects #hero .overview p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-family: "Crimson Text", serif;
+}
+#projects #screenshots {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 100px;
+}
+#projects #screenshots h2 {
+  font-size: 2rem;
+  color: navy;
+  text-decoration: underline;
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+#projects #screenshots .swiper {
+  width: 100%;
+}
+#projects #screenshots .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 860px) {
+  #projects {
+    padding: 120px 0 30px 0;
+  }
+  #projects #hero {
+    flex-direction: column;
+    padding: 10px;
+  }
+  #projects #hero img {
+    width: 100%;
+  }
+  #projects #hero .overview h1 {
+    font-size: 2rem;
+  }
+  #projects #hero .overview h1::before {
+    height: 4px;
+    bottom: -4px;
+  }
+  #projects #hero .overview h1::after {
+    width: 10px;
+    height: 10px;
+    bottom: -7px;
+  }
+  #projects #screenshots {
+    padding: 20px;
+  }
+  #projects #screenshots h2 {
+    font-size: 1.5rem;
+  }
+}
+#contact {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  padding: 120px 0 80px 0;
+  background: lightcyan;
+}
+#contact h2 {
+  font-size: 3rem;
+  position: relative;
+  font-family: "Playfair Display", serif;
+  color: navy;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+#contact h2::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 2px;
+  background: #fecd08;
+}
+#contact h2:hover::after {
+  width: 100%;
+}
+@media only screen and (min-width: 0px) and (max-width: 860px) {
+  #contact h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+}
+#contact p {
+  font-size: 18px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 0px) and (max-width: 860px) {
+  #contact p {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+#contact .custom-form {
+  margin-top: 20px;
+}
+#contact .custom-form .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact .custom-form .row .col-md {
+  position: relative;
+  padding: 0 !important;
+  margin-bottom: 40px !important;
+}
+#contact .custom-form .row .col-md * {
+  position: absolute;
+}
+#contact .custom-form .row .col-md label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  padding: 0 10px;
+  z-index: 1;
+  left: 0;
+}
+#contact .custom-form .row .col-md input,
+#contact .custom-form .row .col-md select {
+  background: transparent !important;
+  outline: none;
+  border: none !important;
+  color: navy;
+  font-family: "Crimson Text", serif;
+  position: relative;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 30px;
+  font-size: 18px;
+  z-index: 1;
+  padding-left: 10px;
+}
+#contact .custom-form .row .col-md input:valid + .form-label, #contact .custom-form .row .col-md input:focus + .form-label,
+#contact .custom-form .row .col-md input .active + .form-label,
+#contact .custom-form .row .col-md select:valid + .form-label,
+#contact .custom-form .row .col-md select:focus + .form-label,
+#contact .custom-form .row .col-md select .active + .form-label {
+  top: -12px;
+}
+#contact .custom-form .row .col-md input:valid ~ div.line, #contact .custom-form .row .col-md input:focus ~ div.line,
+#contact .custom-form .row .col-md input .active ~ div.line,
+#contact .custom-form .row .col-md input .form-control.active ~ div.line,
+#contact .custom-form .row .col-md select:valid ~ div.line,
+#contact .custom-form .row .col-md select:focus ~ div.line,
+#contact .custom-form .row .col-md select .active ~ div.line,
+#contact .custom-form .row .col-md select .form-control.active ~ div.line {
+  height: 100% !important;
+  border-radius: 3px;
+}
+#contact .custom-form .row .col-md input[type=submit],
+#contact .custom-form .row .col-md select[type=submit] {
+  background: navy !important;
+  color: #fecd08;
+  height: auto;
+  cursor: pointer;
+  padding: 10px 0;
+}
+#contact .custom-form .row .col-md div.line {
+  width: 100% !important;
+  height: 2px !important;
+  bottom: 0;
+  left: 0;
+}
+#contact .social-media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact .social-media-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  background: navy;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#contact .social-media-icons a i {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-46%, -46%);
+  color: #fecd08;
+}
+#contact .social-media-icons a .tooltip {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+#contact .social-media-icons a:hover .tooltip {
+  opacity: 1;
+}
+
+footer {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  background: lightcyan;
+  padding: 15px 0;
+  color: navy;
+}
+footer .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container .row {
+  width: 100%;
+  display: flex;
+  padding: 0 40px;
+}
+footer .container .row .col-sm-6 {
+  flex: 0 0 50%;
+}
+footer .container .row .col-sm-6 p {
+  margin: 0;
+}
+footer .container .row .col-sm-6 ul.social-media {
+  list-style: none;
+  padding: 0;
+}
+footer .container .row .col-sm-6 ul.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+footer .container .row .col-sm-6 ul.social-media li a {
+  color: navy;
+}
+footer .container .row .col-sm-6 ul.social-media li a:hover {
+  color: #ccc;
+}
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes lefttoright {
+  0%, 100% {
+    left: 0;
+    border-radius: 50%;
+    transform: rotate(360deg);
+  }
+  50% {
+    left: calc(100% - 15px);
+    border-radius: 0;
+    transform: rotate(0deg);
   }
 }/*# sourceMappingURL=style.css.map */
