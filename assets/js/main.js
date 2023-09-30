@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(".menu").toggleClass("active");
   });
   $("#experience").html(new Date().getFullYear() - 2020);
-  const screensize = screen.width;
+  document.querySelector('video').play();
   const swiper = new Swiper(".swiper", {
     // Optional parameters
     breakpoints: {
