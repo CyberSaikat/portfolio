@@ -7,8 +7,8 @@
   <title>Saikat Roy</title>
   <link rel="icon" href="./assets/logo/logo-2.png" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/scss/style.css" />
   <link rel="stylesheet" href="./vendor/SwiperJs/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/scss/style.css" />
 </head>
 
 <body id="home">
@@ -78,10 +78,10 @@
   </main>
   <section id="about">
     <h2>About</h2>
-    <div class="container">
+    <div class="container p-2">
       <p>
         Hi, I'm
-        <span class="text-secondary font-weight-bolder">Saikaty Roy</span>, a
+        <span class="text-secondary font-weight-bolder">Saikat Roy</span>, a
         web developer with <span id="experience"></span> years of experience.
         I'm passionate about building beautiful, functional, and user-friendly
         websites that help businesses achieve their goals.
@@ -96,7 +96,7 @@
       <ul>
         <li>
           Programming languages:
-          <ul class="skills">
+          <ul class="skills p-0">
             <li>
               <span class="text">HTML</span>
               <span class="line html"></span>
@@ -241,67 +241,180 @@
     </section>
   </section>
   <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Get in touch with me today to learn more about my services or to discuss
-      a potential project.
-    </p>
-    <form action="#" method="POST" class="custom-form p-2">
-      <div class="row" style="gap: 20px">
-        <div class="col-md mb-4">
-          <input type="text" name="name" id="name" class="form-control" required />
-          <label class="form-label" for="name" class="form-label">Name</label>
-          <div class="line bg-primary col-md-12"></div>
+    <div class="left-side p-3">
+      <h2>Contact</h2>
+      <p>
+        Get in touch with me today to learn more about my services or to discuss
+        a potential project.
+      </p>
+      <form action="#" method="POST" class="custom-form p-2">
+        <div class="row" style="gap: 20px">
+          <div class="col-md mb-4">
+            <input type="text" name="name" id="name" class="form-input" required />
+            <label class="form-label" for="name" class="form-label">Name</label>
+            <div class="line bg-primary col-md-12"></div>
+          </div>
+          <div class="col-md mb-4">
+            <input type="email" name="email" id="email" class="form-input" required />
+            <label class="form-label" for="email" class="form-label">Email</label>
+            <div class="line bg-primary col-md-12"></div>
+          </div>
         </div>
-        <div class="col-md mb-4">
-          <input type="email" name="email" id="email" class="form-control" required />
-          <label class="form-label" for="email" class="form-label">Email</label>
-          <div class="line bg-primary col-md-12"></div>
+        <div class="row" style="gap: 20px">
+          <div class="col-md mb-4 w-100">
+            <input type="text" name="message" id="message" class="form-input" required />
+            <label class="form-label" for="message" class="form-label">Message</label>
+            <div class="line bg-primary col-md-12"></div>
+          </div>
         </div>
+        <div class="row" style="gap: 20px">
+          <div class="col-md mb-4 w-100">
+            <input type="submit" name="send" id="submit" class="form-input active bg-secondary" value="Send Mail" />
+          </div>
+        </div>
+      </form>
+      <div class="social-media-icons">
+        <a href="https://www.facebook.com/example" target="_blank">
+          <i class="bi bi-facebook"></i>
+          <span class="tooltip">Facebook</span>
+        </a>
+        <a href="https://www.twitter.com/example" target="_blank">
+          <i class="bi bi-twitter"></i>
+          <span class="tooltip">Twitter</span>
+        </a>
+        <a href="https://www.instagram.com/example" target="_blank">
+          <i class="bi bi-instagram"></i>
+          <span class="tooltip">Instagram</span>
+        </a>
       </div>
-      <div class="row" style="gap: 20px">
-        <div class="col-md mb-4 w-100">
-          <input type="text" name="message" id="message" class="form-control" required />
-          <label class="form-label" for="message" class="form-label">Message</label>
-          <div class="line bg-primary col-md-12"></div>
-        </div>
+    </div>
+    <div class="right-side p-0">
+      <div class="box">
+        <ul>
+          <h4>Saikat Roy</h4>
+          <li class="number"><a href="tel:+919732548768"><i class="bi bi-telephone"></i>+91 97325 48768</a></li>
+          <li><a href="mailto:saikat.roy@fastrechargeweb.in"><i
+                class="bi bi-envelope"></i>saikat.roy@fastrechargeweb.in</a></li>
+          <li>
+            <address>
+              <i class="bi bi-geo-alt"></i>Uchal Pukuri, Mekliganj, Cooch Behar, West Bengal, 735303
+            </address>
+          </li>
+        </ul>
       </div>
-      <div class="row" style="gap: 20px">
-        <div class="col-md mb-4 w-100">
-          <input type="submit" name="send" id="submit" class="form-control active bg-secondary" value="Send Mail" />
-        </div>
-      </div>
-    </form>
-    <div class="social-media-icons">
-      <a href="https://www.facebook.com/example" target="_blank">
-        <i class="bi bi-facebook"></i>
-        <span class="tooltip">Facebook</span>
-      </a>
-      <a href="https://www.twitter.com/example" target="_blank">
-        <i class="bi bi-twitter"></i>
-        <span class="tooltip">Twitter</span>
-      </a>
-      <a href="https://www.instagram.com/example" target="_blank">
-        <i class="bi bi-instagram"></i>
-        <span class="tooltip">Instagram</span>
-      </a>
     </div>
   </section>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <p>Copyright &copy; 2023 Saikat Roy</p>
-        </div>
-        <div class="col-sm-6">
-          <ul class="social-media">
-            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-          </ul>
-        </div>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+      <!-- Left -->
+      <div class="me-5">
+        <h3>Get connected with us on social networks:</h3>
       </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div class="social-media-icons">
+        <a href="" class="text-white" target="_blank">
+          <i class="bi bi-facebook"></i>
+          <span class="tooltip">Facebook</span>
+        </a>
+        <a href="" class="text-white" target="_blank">
+          <i class="bi bi-twitter"></i>
+          <span class="tooltip">Twitter</span>
+        </a>
+        <a href="" class="text-white" target="_blank">
+          <i class="bi bi-google"></i>
+          <span class="tooltip">Google</span>
+        </a>
+        <a href="" class="text-white" target="_blank">
+          <i class="bi bi-instagram"></i>
+          <span class="tooltip">Instagram</span>
+        </a>
+        <a href="" class="text-white" target="_blank">
+          <i class="bi bi-linkedin"></i>
+          <span class="tooltip">Linkedin</span>
+        </a>
+        <a href="" class="text-white" target="_blank">
+          <i class="bi bi-github"></i>
+          <span class="tooltip">GitHub</span>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="middle-section">
+      <div class="container">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md">
+            <!-- Content -->
+            <h6 class="">Saikat Roy</h6>
+            <p>
+              I'm passionate about building beautiful, functional, and user-friendly websites that help businesses achieve their goals.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Important Links</h6>
+            <p>
+              <a href="#about" class="text-white">About</a>
+            </p>
+            <p>
+              <a href="#projects" class="text-white">Projects</a>
+            </p>
+            <p>
+              <a href="#contact" class="text-white">Contact</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <p>
+              <a href="#!" class="text-white">Terms and conditions</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Privacy policy</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Refund policy</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <p><i class="bi bi-geo-alt mr-3"></i> Uchal Pukuri, Mekliganj, Cooch Behar, West Bengal, 735303</p>
+            <p><i class="bi bi-envelope mr-3"></i> saikat.roy@fastrechargeweb.in</p>
+            <p><i class="bi bi-phone mr-3"></i> +91 97325 48768</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="copyright" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2023 Copyright: 
+      <a class="text-white" href="https://saikatroy.in"> Saikat Roy</a>
     </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
   </footer>
   <script src="./assets/js/jquery-3.7.1.js"></script>
   <script src="./vendor/SwiperJs/swiper-bundle.min.js"></script>
