@@ -4,7 +4,6 @@ $(document).ready(function () {
     $(".menu").toggleClass("active");
   });
   $("#experience").html(new Date().getFullYear() - 2020);
-  document.querySelector('video').play();
   const swiper = new Swiper(".swiper", {
     // Optional parameters
     breakpoints: {
@@ -28,4 +27,11 @@ $(document).ready(function () {
       prevEl: ".swiper-button-prev",
     },
   });
+});
+
+const typed = new Typed('#text', {
+  strings: ['Programmer', 'YouTuber','Business Man'],
+  typeSpeed: 50,
+  loop: true,
+  loopCount: Infinity,
 });

@@ -19,10 +19,8 @@ a {
   color: #000;
 }
 
-video {
-  position: fixed;
-  top: 100px;
-  left: 0;
+body {
+  background: lightcyan;
 }
 
 .text-primary {
@@ -279,8 +277,11 @@ main section {
   place-items: center;
 }
 main section .text-wrapper {
-  color: #fff;
+  color: navy;
   font-size: 2rem;
+}
+main section .text-wrapper .text-primary {
+  color: #B931FC !important;
 }
 main section .box {
   display: flex;
