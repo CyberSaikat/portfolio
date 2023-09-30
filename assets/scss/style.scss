@@ -1006,57 +1006,64 @@ main {
     }
 }
 footer {
-    @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
     width: 100%;
     max-width: 1920px;
     position: relative;
     background: $secondary;
-
-    .social-media-icons {
+    .first-section {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        a {
-            display: inline-block;
-            margin: 0 10px;
-            background: $secondary;
-            padding: 10px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        @media only screen and (min-width: 0px) and (max-width: 860px) {
+            flex-direction: column;
+            gap: 30px;
+        }
+        .social-media-icons {
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
 
-            i {
-                font-size: 24px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-46%, -46%);
-                color: #fff;
-            }
+            a {
+                display: inline-block;
+                margin: 0 10px;
+                background: $secondary;
+                padding: 10px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
 
-            .tooltip {
-                position: absolute;
-                top: -50px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100px;
-                height: 30px;
-                line-height: 30px;
-                text-align: center;
-                background-color: $secondary;
-                color: #fff;
-                border-radius: 5px;
-                opacity: 0;
-                transition: opacity 0.2s ease-in-out;
-            }
+                i {
+                    font-size: 24px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-46%, -46%);
+                    color: #fff;
+                }
 
-            &:hover .tooltip {
-                opacity: 1;
+                .tooltip {
+                    position: absolute;
+                    top: -50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    background-color: $secondary;
+                    color: #fff;
+                    border-radius: 5px;
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in-out;
+                }
+
+                &:hover .tooltip {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -1068,6 +1075,10 @@ footer {
             div.row {
                 display: grid;
                 grid-template-columns: 20% repeat(3, 1fr);
+
+                @media only screen and (min-width: 0px) and (max-width: 860px) {
+                    grid-template-columns: 1fr;
+                }
                 .col-md {
                     display: flex;
                     flex-direction: column;
