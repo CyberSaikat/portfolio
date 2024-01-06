@@ -10,6 +10,9 @@ $logo_width: 40%;
 $blur_circle: 300px;
 $primary: #fecd08;
 $secondary: navy;
+$hexagon-size: 150px;
+$hexagon-color-1: #00ffb8;
+$hexagon-color-2: #13ce9a;
 
 *,
 *::after,
@@ -75,6 +78,14 @@ body {
 
 .justify-content-between {
     justify-content: space-between;
+}
+
+img {
+    transition: 0.1s linear all;
+    overflow: hidden;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 header {
@@ -290,18 +301,23 @@ main {
     max-width: 1920px;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 70%,transparent), url(../images/2023-07-14.jpg);
+    background-size: 100% auto;
+    background-position: center;
+    background-blend-mode: multiply;
     section {
-        width: 100%;
-        height: 100%;
         display: grid;
         place-items: center;
+        margin-left: 250px;
+        color: white;
         .text-wrapper {
             font-size: 2rem;
             .text-primary {
-                color: #B931FC !important;
+                // color: #b931fc !important;
+                color: $primary;
             }
         }
         .box {
@@ -317,8 +333,8 @@ main {
                 position: relative;
                 overflow: hidden;
                 z-index: 1;
-                color: $primary;
                 transition: 0.5s ease-in-out all;
+                color: white;
                 &::before {
                     content: "";
                     display: inline-block;
@@ -396,15 +412,31 @@ main {
 
 @media only screen and (min-width: 0px) and (max-width: 860px) {
     main {
+        background: none;
+        height: 400px;
+        margin-top: 100px;
         section {
-            padding: 0 20px;
+            width: calc(100% - 20px);
+            padding: 30px 10px;
+            margin-left: 30px;
             .text-wrapper {
                 font-size: 1rem;
+                color: #000;
+                .text-primary {
+                    color: $secondary !important;
+                }
             }
             .box {
                 a {
                     font-size: 1rem;
                     padding: 10px 20px;
+                    color: #000;
+                    &::before {
+                        background: $primary;
+                    }
+                    span {
+                        background: $secondary;
+                    }
                 }
             }
         }
@@ -1143,5 +1175,14 @@ footer {
         left: calc(100% - 15px);
         border-radius: 0;
         transform: rotate(0deg);
+    }
+}
+
+@keyframes animateBg{
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
     }
 }

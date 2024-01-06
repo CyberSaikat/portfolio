@@ -67,6 +67,14 @@ body {
   justify-content: space-between;
 }
 
+img {
+  transition: 0.1s linear all;
+  overflow: hidden;
+}
+img:hover {
+  transform: scale(1.1);
+}
+
 header {
   width: 100%;
   max-width: 1920px;
@@ -266,21 +274,25 @@ main {
   max-width: 1920px;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 70%, transparent), url(../images/2023-07-14.jpg);
+  background-size: 100% auto;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 main section {
-  width: 100%;
-  height: 100%;
   display: grid;
   place-items: center;
+  margin-left: 250px;
+  color: white;
 }
 main section .text-wrapper {
   font-size: 2rem;
 }
 main section .text-wrapper .text-primary {
-  color: #B931FC !important;
+  color: #fecd08;
 }
 main section .box {
   display: flex;
@@ -296,8 +308,8 @@ main section .box a {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  color: #fecd08;
   transition: 0.5s ease-in-out all;
+  color: white;
 }
 main section .box a::before {
   content: "";
@@ -364,15 +376,33 @@ main aside {
 }
 
 @media only screen and (min-width: 0px) and (max-width: 860px) {
+  main {
+    background: none;
+    height: 400px;
+    margin-top: 100px;
+  }
   main section {
-    padding: 0 20px;
+    width: calc(100% - 20px);
+    padding: 30px 10px;
+    margin-left: 30px;
   }
   main section .text-wrapper {
     font-size: 1rem;
+    color: #000;
+  }
+  main section .text-wrapper .text-primary {
+    color: navy !important;
   }
   main section .box a {
     font-size: 1rem;
     padding: 10px 20px;
+    color: #000;
+  }
+  main section .box a::before {
+    background: #fecd08;
+  }
+  main section .box a span {
+    background: navy;
   }
   main aside {
     display: none;
@@ -1062,5 +1092,13 @@ footer .copyright {
     left: calc(100% - 15px);
     border-radius: 0;
     transform: rotate(0deg);
+  }
+}
+@keyframes animateBg {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
   }
 }/*# sourceMappingURL=style.css.map */
