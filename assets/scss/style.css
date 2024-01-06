@@ -20,7 +20,7 @@ a {
 }
 
 body {
-  background: lightcyan;
+  background: lightcyan !important;
 }
 
 .text-primary {
@@ -277,7 +277,6 @@ main section {
   place-items: center;
 }
 main section .text-wrapper {
-  color: navy;
   font-size: 2rem;
 }
 main section .text-wrapper .text-primary {
