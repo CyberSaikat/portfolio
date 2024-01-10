@@ -790,6 +790,17 @@ main {
     }
 }
 
+@media only screen and (min-width: 0px) and (max-width: 911px) {
+    #projects {
+        #hero {
+            flex-direction: column;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 0px) and (max-width: 860px) {
     #projects {
         padding: 120px 0 30px 0;
@@ -1054,6 +1065,20 @@ main {
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 911px) {
+    #contact {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        .left-side {
+            width: 100%;
+        }
+        .right-side {
+            width: 100%;
         }
     }
 }

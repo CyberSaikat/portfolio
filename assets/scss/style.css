@@ -712,6 +712,14 @@ main aside {
   width: 100%;
 }
 
+@media only screen and (min-width: 0px) and (max-width: 911px) {
+  #projects #hero {
+    flex-direction: column;
+  }
+  #projects #hero img {
+    width: 100%;
+  }
+}
 @media only screen and (min-width: 0px) and (max-width: 860px) {
   #projects {
     padding: 120px 0 30px 0;
@@ -981,6 +989,19 @@ main aside {
   }
 }
 
+@media only screen and (min-width: 0px) and (max-width: 911px) {
+  #contact {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  #contact .left-side {
+    width: 100%;
+  }
+  #contact .right-side {
+    width: 100%;
+  }
+}
 footer {
   width: 100%;
   max-width: 1920px;
