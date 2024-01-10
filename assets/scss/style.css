@@ -75,6 +75,26 @@ img:hover {
   transform: scale(1.1);
 }
 
+body {
+  position: relative;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fecd08;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preloader img {
+  width: 200px;
+}
+
 header {
   width: 100%;
   max-width: 1920px;

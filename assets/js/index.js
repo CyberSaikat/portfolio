@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $(".preloader").hide();
   $(".controller i").click(function () {
     $(".controller").toggleClass("active");
     $(".menu").toggleClass("active");
@@ -29,8 +30,8 @@ $(document).ready(function () {
   });
 });
 
-const typed = new Typed('#text', {
-  strings: ['Programmer', 'YouTuber','Business Man'],
+const typed = new Typed("#text", {
+  strings: ["Programmer", "YouTuber", "Business Man"],
   typeSpeed: 50,
   loop: true,
   loopCount: Infinity,
