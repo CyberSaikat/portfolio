@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  $(".preloader").hide();
+  setTimeout(() => {
+    $(".preloader").hide();
+  }, 3000);
   $(".controller i").click(function () {
     $(".controller").toggleClass("active");
     $(".menu").toggleClass("active");
